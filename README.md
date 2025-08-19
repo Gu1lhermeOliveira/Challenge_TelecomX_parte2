@@ -1,133 +1,112 @@
-# Análise de Evasão de Clientes (Churn) — Projeto de Machine Learning
+<h1> :bar_chart: Análise de Evasão de Clientes (Churn) </h1>
 
-## 🎯 Missão
-Sua nova missão é desenvolver **modelos preditivos** capazes de prever quais clientes têm maior chance de cancelar seus serviços.
+<h2>:round_pushpin: Introdução ao Projeto</h2>
 
-A empresa quer **antecipar o problema da evasão**, e cabe a você construir um **pipeline robusto** para essa etapa inicial de modelagem.
+Este projeto faz parte de um desafio de Machine Learning voltado para um problema de negócio: a evasão de clientes (Churn).
+O objetivo foi desenvolver modelos capazes de prever quais clientes têm maior chance de cancelar seus serviços e, a partir disso, propor estratégias de retenção.
 
-## 🧠 Objetivos do Desafio
-- Preparar os dados para a modelagem (tratamento, encoding, normalização).  
-- Realizar análise de correlação e seleção de variáveis.  
-- Treinar dois ou mais modelos de classificação.  
-- Avaliar o desempenho dos modelos com métricas.  
-- Interpretar os resultados, incluindo a importância das variáveis.  
-- Criar uma conclusão estratégica apontando os principais fatores que influenciam a evasão.  
+<h2>:books: Linguagem e Bibliotecas Utilizadas</h2>
 
-## 🧰 O que você vai praticar
-✅ Pré-processamento de dados para Machine Learning  
-✅ Construção e avaliação de modelos preditivos  
-✅ Interpretação dos resultados e entrega de insights  
-✅ Comunicação técnica com foco estratégico  
+* Python
 
+* Pandas
 
-## 1) Objetivo
-Prever a **evasão de clientes (churn)** e identificar os **fatores que mais influenciam** a decisão de cancelamento, orientando **estratégias de retenção**.
+* Numpy
 
-## 2) Dados
-- **Fonte dos dados:** `dados_limpos.csv`
-- **Variável-alvo:** `churn`
+* Matplotlib
 
-## 3) Pré-processamento
-- Limpeza de dados (nulos, tipos, *outliers*).
-- *Encoding* de variáveis categóricas (One-Hot/Ordinal, conforme o caso).
-- Padronização/normalização para modelos lineares e SVM.
-- *Split* treino/teste e validação cruzada estratificada.
-- Balanceamento (se necessário): `class_weight='balanced'` e/ou `SMOTE`.
+* Seaborn
 
-## 4) Modelagem
-Modelos avaliados:
-  - Logistic Regression
-  - Random Forest
+* Scikit-learn
 
-Métricas calculadas (teste e CV): Accuracy, Precision, Recall, F1, ROC AUC, *Matriz de Confusão*.
+* Statsmodels
 
-### 4.1) Desempenho dos modelos
-- plt.plot(fpr, tpr, color='blue', label=f'Random Forest (AUC = {roc_auc:.2f})')
-- Acurácia: 0.7502369668246446
-- accuracy: 0.75
-- Acurácia: 0.7758293838862559
-- accuracy: 0.78
-- precision: 1
-- precision: 1
-- recall: 1
-- recall: 1
-- f1: 0.91
-- f1: 0.85
-- ROC AUC: 0.8453605281539812
-- ROC AUC: 0.8238280346471589
+<h2>:notebook_with_decorative_cover: Como Utilizar o Projeto</h2>
 
-> Observação: utilize ROC AUC e Recall como métricas-chave para **priorizar a captura de churn** (falsos negativos são mais custosos).
+<h2>1. Clone o repositório ou baixe os arquivos .ipynb</h2>
 
-## 5) Seleção de Variáveis
-Variáveis consideradas no modelo:
-- (lista de variáveis será preenchida após a seleção de features)
-
-### 5.1) Importância das variáveis / *Feature Importance*
-As importâncias serão detalhadas por modelo (coeficientes padronizados, Gini/ganho, ou permutação).
-
-> Interpretação: variáveis com maior importância/coeficiente absoluto têm maior contribuição para explicar a evasão (sinal positivo → aumenta a chance de churn; negativo → reduz).
-
-## 6) Principais Fatores que Influenciam a Evasão
-- **Preço/Plano**: diferenças de plano, upgrades/downgrades e descontos aplicados.
-- **Engajamento/uso**: número de interações, dias ativos, consumo de serviços.
-- **Qualidade de serviço**: reclamações, tempo de atendimento, falhas/incidentes.
-- **Perfil/antiguidade**: tempo de contrato, região, segmento de cliente.
-- **Pagamentos**: atrasos, inadimplência, meio de pagamento.
-
-_(Ajuste esta lista com base nas importâncias observadas acima.)_
-
-## 7) Estratégias de Retenção
-**Estratégias de retenção sugeridas (orientadas por dados):**
-- **Clientes com alto tempo de espera/suporte:** priorizar SLA de atendimento, filas dedicadas, e canais assíncronos.
-- **Planos com alto índice de cancelamento:** revisar política de preço e benefícios; testar *bundles* e descontos condicionados à fidelização.
-- **Baixo engajamento/uso do serviço:** campanhas de reativação (e-mail, push), conteúdos de onboarding e *nudges* dentro do app.
-- **Clientes com histórico de atraso de pagamento:** oferecer meios de pagamento flexíveis, lembretes proativos e renegociação automática.
-- **Sinais precoces (queda no uso, reclamações):** acionar *playbooks* de retenção via CRM com ofertas personalizadas.
-
-**Priorize ações orientadas pelos fatores mais importantes do seu modelo.** Exemplos:
-- Se **tempo de contrato curto** for determinante → campanhas de *onboarding* e benefícios nos primeiros 90 dias.
-- Se **plano X** concentrar churn → experimentar precificação dinâmica, *trial* de recursos premium e suporte dedicado.
-- Se **queda de uso** antecede o churn → *alerts* de risco + oferta de valor (créditos, conteúdos, funcionalidades).
-
-## 8) Interpretação & Explainability
-- **SHAP/Permutação** para explicar previsões individuais e globais.
-- **Parcial Dependence/ICE** para entender o efeito marginal de variáveis-chave.
-- **Calibração de probabilidades** (CalibratedClassifierCV) para *scorecards* acionáveis no CRM.
-
-## 9) Como Reproduzir
 ```bash
-# 1) Clonar e instalar dependências
-pip install -r requirements.txt
+git clone https://github.com/Gu1lhermeOliveira/Challenge_TelecomX_parte2.git
+````
 
-# 2) Executar a análise
+2. Execute o notebook no Jupyter ou Google Colab
+```bash
 jupyter notebook Analise_Parte2.ipynb
+````
+<h2>:dart: Objetivos da Análise</h2>
 
-# 3) (Opcional) Rodar pipeline
-python src/train.py --config configs/default.yaml
-```
+* Preparar os dados para a modelagem (tratamento, encoding, normalização).
 
-## 10) Estrutura do Repositório
-```
-.
-├─ data/                # dados brutos e processados (gitignore)
-├─ notebooks/
-│  └─ Analise_Parte2.ipynb
-├─ src/
-│  ├─ features/         # transformação de dados
-│  ├─ models/           # treino, avaliação, persistência
-│  └─ utils/            # métricas, plots, helpers
-├─ reports/
-│  └─ figures/          # gráficos (ROC, confusão, SHAP)
-├─ configs/             # parâmetros de treino/valid.
-└─ README.md
-```
+* Realizar análise de correlação e seleção de variáveis.
 
-## 11) Próximos Passos
-- Ajuste de *threshold* para balancear Recall vs. Precisão conforme o custo de retenção.
-- *Hyperparameter tuning* (Grid/Random/Bayes) do melhor modelo.
-- Validação temporal (*time-based split*) se houver sazonalidade.
-- Deploy do modelo (API/Batch) + monitoramento de *drift*.
+* Treinar dois ou mais modelos de classificação (ex.: Logistic Regression, Random Forest).
 
----
+* Avaliar o desempenho dos modelos com métricas (Accuracy, Recall, Precision, F1, ROC AUC).
 
-> **Nota**: este README foi gerado automaticamente a partir do notebook, preenchendo o que foi possível (modelos detectados: Logistic Regression, Random Forest). Recomenda-se revisar as métricas e a lista de variáveis conforme os resultados mais recentes.
+* Interpretar os resultados, incluindo a importância das variáveis.
+
+* Gerar insights estratégicos sobre os fatores que mais influenciam a evasão.
+
+<h2>:chart_with_downwards_trend: Visualizações e Resultados</h2>
+1. Curva ROC dos Modelos
+
+2. Matriz de Confusão
+
+3. Importância das Variáveis
+
+4. Distribuição da Evasão por Perfil de Cliente
+
+<h2>:bulb: Insights e Principais Fatores</h2>
+
+<h3>Perfil de Clientes</h3>
+
+* Clientes com contrato mensal têm maior probabilidade de evasão.
+
+* Alto gasto mensal + pouco tempo de contrato é um forte indicador de churn.
+
+* Atrasos de pagamento estão diretamente ligados a maiores taxas de cancelamento.
+
+* Qualidade e Serviços
+
+* Clientes que não utilizam determinados serviços (ex.: pacotes adicionais) cancelam com mais frequência.
+
+* Insatisfação com suporte/atendimento aparece como variável relevante.
+
+* Fatores de Negócio
+
+* Tipo de plano e meio de pagamento influenciam diretamente na retenção.
+
+* Contratos anuais ou mais longos apresentam menor índice de cancelamento.
+
+<h2>:hammer_and_wrench: Estratégias de Retenção</h2>
+
+* Clientes novos → campanhas de onboarding, benefícios nos primeiros meses.
+
+* Planos com alta taxa de churn → revisar precificação e oferecer pacotes customizados.
+
+* Atraso de pagamento → flexibilizar formas de pagamento e criar alertas automáticos.
+
+* Queda no uso do serviço → campanhas de engajamento personalizadas (e-mail, push, notificações no app).
+
+<h2>:mag_right: Interpretação & Explainability</h2>
+
+* SHAP Values e Permutation Importance para explicar previsões.
+
+* Partial Dependence Plots (PDP) para avaliar impacto de variáveis específicas.
+
+* Calibração de probabilidades para criar scorecards de risco de churn.
+
+<h2>:triangular_flag_on_post: Próximos Passos</h2>
+
+* Otimizar hiperparâmetros dos modelos (GridSearch / RandomizedSearch).
+
+* Avaliar divisão temporal (time-series split) para sazonalidade.
+
+* Desenvolver pipeline de deploy (API ou batch scoring).
+
+* Monitorar drift e atualizar modelo conforme novas informações.
+
+<h2>⚠️ Autor do Projeto</h2>
+
+Guilherme Dias de Oliveira
+🔗 Linkedin: www.linkedin.com/in/guilhermedooliveira
